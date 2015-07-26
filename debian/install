@@ -1,0 +1,3 @@
+include/safe_iop.h usr/include
+safe_iop.a         usr/lib
+libsafe_iop.so.*   usr/lib

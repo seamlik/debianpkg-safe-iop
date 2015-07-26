@@ -1,0 +1,42 @@
+Description: Original Makefile does not compile libsafe_iop.so
+Author: Kai-Chung Yan <seamlikok@gmail.com>
+Last-Update: 2015-07-26
+--- a/Makefile
++++ b/Makefile
+@@ -14,10 +14,10 @@
+ VERSION = 0.3
+ TESTNAME = safe_iop_test
+ # For sparc64, _only_ use -O1 or -O0
+-CFLAGS   = -Wall -O2 -Iinclude
++LOCAL_CFLAGS   = -Iinclude -fPIC
+ SOURCES = src/safe_iop.c
+ 
+-all: $(TESTNAME)
++all: so safe_iop.a
+ 
+ # This may be built as a library or directly included in source.
+ # Unless support for safe_iopf is needed, header inclusion is enough.
+@@ -29,16 +29,14 @@
+ 	$(CC) $(CFLAGS) examples/askme.c -o $@
+ 
+ so: src/safe_iop.c include/safe_iop.h
+-	$(CC) -shared -Wl,-soname,libsafe_iop.so.$(VERSION) $(CFLAGS) $(SOURCES) -o libsafe_iop.so.$(VERSION) 
++	$(CC) -shared -Wl,-soname,libsafe_iop.so.$(VERSION) $(LOCAL_CFLAGS) $(SOURCES) -o libsafe_iop.so.$(VERSION) $(CPPFLAGS) $(LDFLAGS)
+ 
+ dylib: src/safe_iop.c include/safe_iop.h
+ 	$(CC) -dynamiclib -Wl,-headerpad_max_install_names,-undefined,dynamic_lookup,-compatibility_version,$(VERSION),-current_version,$(VERSION),-install_name,/usr/local/lib/libsafe_iop.$(VERSION).dylib $(CFLAGS) $(SOURCES) -o libsafe_iop.$(VERSION).dylib
+ 
++safe_iop.a: src/safe_iop.c include/safe_iop.h
++	$(CC) -c $(CFLAGS) $(SOURCES) $(LOCAL_CFLAGS) $(CPPFLAGS) -o safe_iop.o
++	ar rs $@ safe_iop.o
+ 
+-test: $(TESTNAME)
+-	@./$(TESTNAME)
+-	@rm $(TESTNAME)
+-
+-clean:  
+-	rm $(TESTNAME)
+-
++clean:
++	rm -f *.a *.o *.so.*
+\ No newline at end of file

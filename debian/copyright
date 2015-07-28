@@ -1,7 +1,7 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0
 Upstream-Name: safe-iop
 Upstream-Contact: Will Drewry <redpig@dataspill.org>
-Source: https://code.google.com/p/safe-iop/
+Source: https://code.google.com/p/safe-iop
 
 Files: *
 Copyright: 2007-2008, Will Drewry <redpig@dataspill.org>

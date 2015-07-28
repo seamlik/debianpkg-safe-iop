@@ -8,7 +8,7 @@ Last-Update: 2015-07-26
  TESTNAME = safe_iop_test
  # For sparc64, _only_ use -O1 or -O0
 -CFLAGS   = -Wall -O2 -Iinclude
-+LOCAL_CFLAGS   = -Iinclude -fPIC
++LOCAL_CFLAGS = -Iinclude -fPIC
  SOURCES = src/safe_iop.c
  
 -all: $(TESTNAME)
@@ -16,12 +16,14 @@ Last-Update: 2015-07-26
  
  # This may be built as a library or directly included in source.
  # Unless support for safe_iopf is needed, header inclusion is enough.
-@@ -29,16 +29,14 @@
+@@ -28,17 +28,15 @@
+ askme: examples/askme.c include/safe_iop.h
  	$(CC) $(CFLAGS) examples/askme.c -o $@
  
- so: src/safe_iop.c include/safe_iop.h
+-so: src/safe_iop.c include/safe_iop.h
 -	$(CC) -shared -Wl,-soname,libsafe_iop.so.$(VERSION) $(CFLAGS) $(SOURCES) -o libsafe_iop.so.$(VERSION) 
-+	$(CC) -shared -Wl,-soname,libsafe_iop.so.$(VERSION) $(LOCAL_CFLAGS) $(SOURCES) -o libsafe_iop.so.$(VERSION) $(CPPFLAGS) $(LDFLAGS)
++libsafe_iop.so.$(VERSION): src/safe_iop.c include/safe_iop.h
++	$(CC) -shared -Wl,-soname,libsafe_iop.so.0 $(LOCAL_CFLAGS) $(SOURCES) -o $@ $(CPPFLAGS) $(LDFLAGS)
  
  dylib: src/safe_iop.c include/safe_iop.h
  	$(CC) -dynamiclib -Wl,-headerpad_max_install_names,-undefined,dynamic_lookup,-compatibility_version,$(VERSION),-current_version,$(VERSION),-install_name,/usr/local/lib/libsafe_iop.$(VERSION).dylib $(CFLAGS) $(SOURCES) -o libsafe_iop.$(VERSION).dylib

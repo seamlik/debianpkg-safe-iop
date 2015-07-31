@@ -1,14 +1,13 @@
 Source: safe-iop
 Section: libs
 Priority: optional
-Maintainer: Android tools Maintainer <android-tools-devel@lists.alioth.debian.org>
-Uploaders: Reiner Herrmann <reiner@reiner-h.de>,
-           Kai-Chung Yan <seamlikok@gmail.com>
+Maintainer: Kai-Chung Yan <seamlikok@gmail.com>
+Uploaders: Reiner Herrmann <reiner@reiner-h.de>
 Build-Depends: debhelper (>=9)
 Standards-Version: 3.9.6
 Homepage: https://code.google.com/p/safe-iop
-Vcs-Git: https://alioth.debian.org/anonscm/git/android-tools/safe-iop.git
-Vcs-Browser: https://anonscm.debian.org/cgit/android-tools/safe-iop.git
+Vcs-Git: https://github.com/seamlik/debianpkg-safe-iop.git
+Vcs-Browser: https://github.com/seamlik/debianpkg-safe-iop
 
 Package: libsafe-iop0
 Section: libs

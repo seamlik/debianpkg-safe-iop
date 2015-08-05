@@ -1,5 +1,5 @@
-safe-iop (0.3.1-1) unstable; urgency=low
+safe-iop (0.3.1-1) UNRELEASED; urgency=low
 
-  * Initial release (Closes: #790131)
+  * Initial release (Closes: #790131, #794522)
 
- -- Reiner Herrmann <reiner@reiner-h.de>  Sat, 27 Jun 2015 15:34:46 +0200
+ -- Kai-Chung Yan <seamlikok@gmail.com>  Mon, 03 Aug 2015 11:44:28 +0800

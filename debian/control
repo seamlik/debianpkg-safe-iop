@@ -2,7 +2,6 @@ Source: safe-iop
 Section: libs
 Priority: optional
 Maintainer: Kai-Chung Yan <seamlikok@gmail.com>
-Uploaders: Reiner Herrmann <reiner@reiner-h.de>
 Build-Depends: debhelper (>=9)
 Standards-Version: 3.9.6
 Homepage: https://code.google.com/p/safe-iop

@@ -2,3 +2,11 @@
 
 %:
 	dh $@
+
+override_dh_auto_build:
+	dh_auto_build
+	dpkg-gensymbols -plibsafe-iop0 -elibsafe_iop.so.0.3 -Odebian/libsafe-iop0.symbols
+
+override_dh_auto_clean:
+	rm -f debian/libsafe-iop0.symbols
+	dh_auto_clean

@@ -4,12 +4,13 @@ Upstream-Contact: Will Drewry <redpig@dataspill.org>
 Source: https://code.google.com/p/safe-iop
 
 Files: *
-Copyright: 2007-2008, Will Drewry <redpig@dataspill.org>
+Copyright: 2007-2008 Will Drewry <redpig@dataspill.org>
+           2008 Google Inc
 License: public-domain
 
 Files: debian/*
-Copyright: 2015, Reiner Herrmann <reiner@reiner-h.de>
-           2015, Kai-Chung Yan <seamlikok@gmail.com>
+Copyright: 2015 Reiner Herrmann <reiner@reiner-h.de>
+           2015 Kai-Chung Yan <seamlikok@gmail.com>
 License: CC0
 
 License: public-domain

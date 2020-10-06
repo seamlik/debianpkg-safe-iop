@@ -20,7 +20,7 @@ its information can be stored.  This has dangerous side effects. For a detailed
 and thorough discussion on integer overflows, please check out CERT's website
 on Secure Coding[1] and even Wikipedia[2].
 
-[1] https://www.securecoding.cert.org/confluence/display/seccode/CERT+C+Secure+Coding+Standard
+[1] https://wiki.sei.cmu.edu/confluence/display/c/SEI+CERT+C+Coding+Standard
 [2] http://en.wikipedia.org/wiki/Integer_overflow
 
 

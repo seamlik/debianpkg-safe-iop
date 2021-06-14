@@ -2,7 +2,7 @@ Source: safe-iop
 Section: libs
 Priority: optional
 Maintainer: Kai-Chung Yan <seamlikok@gmail.com>
-Build-Depends: debhelper (>=9)
+Build-Depends: debhelper
 Standards-Version: 3.9.6
 Homepage: https://code.google.com/p/safe-iop
 Vcs-Git: https://github.com/seamlik/debianpkg-safe-iop.git
